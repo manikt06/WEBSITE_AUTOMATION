@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Slot Booking</title>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+        <style type="text/css">
+            *{
+                font-family: 'Merriweather', serif;
+            }
+            body{
+                background-color:  azure;
+            }
+            header{
+                text-align: center;
+            }
+            aside.left{
+                float: left;
+                width: 35%;
+                margin-left: 17%;
+            }
+            .month{
+                text-align: center;
+                background-color: black;
+                color: white;
+                padding: 5px;
+            }
+            .weekdays{
+                padding: 1px;
+                border-style: solid;
+                background-color: darkgray;
+            }
+            .weekdays li{
+                width: 1%;
+                list-style-type: none;
+                display: inline-block;
+                font-weight: bold;
+                padding-right: 50px;
+            }
+            .days{
+                background-color: antiquewhite;
+                padding: 1px;
+                border-style: solid;
+            }
+            .days li{
+                text-align: center;
+                width: 1%;
+                list-style-type: none;
+                display: inline-block;
+                padding-bottom: 12px;
+                padding-right: 50px;
+            }
+            .current{
+                padding: 5px;
+                background-color: black;
+                color: white;
+            }
+            .slotavailable{
+                padding: 1px;
+                background-color: black;
+                color: white;
+                text-align: center;
+            }
+            aside.right{
+                float: right;
+                text-align: center;
+                border-style: solid;
+                border-color: black;
+                width: 30%;
+                margin-right: 17%;
+                padding-top: 20px;
+                height: 357px;
+                padding-bottom: 20px;
+            }
+            footer{
+                text-align: center;
+                margin-top: 450px;
+            }
+        </style>
+    </head>
+    
+    <body onload="date()">
+        <header>
+            <div style="float: right;">
+                <p style="font-size: 15px;"><span id="datetime"></span></p>
+            </div>
+            <img src="2page.JPG">
+            <h2 style="background-color: darkblue; color: white;">Book Your Slot For Test</h2>
+        </header>
+        <section>
+            <img style="width: 100%" src="slotpic.JPG">
+        </section>
+            <aside class="left">
+                <div class="month">
+                    <h3>September</h3>
+                </div>
+                <div class="weekdays">
+                    <ul>
+                        <li>Mo</li>
+                        <li>Tu</li>
+                        <li>We</li>
+                        <li>Th</li>
+                        <li>Fr</li>
+                        <li>Sa</li>
+                        <li>Su</li>
+                    </ul>
+                </div>
+                <div class="days">
+                    <ul>
+                        <li></li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li>10</li>
+                        <li>11</li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                        <li>20</li>
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                        <li>24</li>
+                        <li>25</li>
+                        <li onclick='document.getElementById("slots").innerHTML = "Slot Available: 0"'>26</li>
+                        <li onclick='document.getElementById("slots").innerHTML ="Holiday"'>27</li>
+                        <li onclick='document.getElementById("slots").innerHTML = "Slot Available: 0"'>28</li>
+                        <li onclick='document.getElementById("slots").innerHTML = "Slot Available: 7"'><span class="current">29</span></li>
+                        <li onclick='document.getElementById("slots").innerHTML = "Slot Available: 18"'>30</li>
+                    </ul>
+                </div>
+                <div class="slotavailable">
+                    <h1 id="slots">Slot Available: 11</h1>
+                </div>
+            </aside>
+            <aside class="right">
+                <form action="HomePage.html">
+                <label>Application Number:</label>
+                &nbsp;&nbsp;
+                <input type="number" placeholder="Applicant name">
+                <br><br>
+                <label>Applicant Name:</label>
+                &nbsp;&nbsp;
+                <input type="text" placeholder="Application number">
+                <br><br>
+                <label>Select Date:</label>
+                &nbsp;&nbsp;
+                <input type="date">
+                <br><br>
+                <label>Select Time:</label>
+                &nbsp;&nbsp;
+                <select style="width: 150px">
+                    <option>--Select--</option>
+                    <option>9:00 to 9:30</option>
+                    <option>9:45 to 10:15</option>
+                    <option>10:30 to 11:00</option>
+                    <option>11:15 to 11:45</option>
+                    <option>12:00 to 12:30</option>
+                    <option>12:45 to 13:15</option>
+                    <option>13:30 to 14:00</option>
+                    <option>14:15 to 14:45</option>
+                </select>
+                <br><br>
+                    <label>Test Centre:</label>
+                    <select>
+                        <option>--Select--</option>
+                        <option>Noida 52</option>
+                        <option>Noida 62</option>
+                        <option>Noida Sec 1</option>
+                        <option>Noida Sec 22</option>
+                        <option>Gautam Budh Nagar</option>
+                    </select>
+                    <br><br>
+                <input type="submit" value="Book" style="background-color: deepskyblue;">
+                </form>
+            </aside>
+        <footer>
+            <h4><strong>Copyright © 1999-2020 MINISTRY OF ROAD TRANSPORT & HIGHWAYS</strong></h4>
+            <h4><strong>Contact Us at : <a href="#">pariwahansewa@yahoo.com</a></strong></h4>
+        </footer>
+    </body>
+    <script>
+        function date(){
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = dt.toLocaleString();
+            var t = setTimeout(date,500); 
+        }
+    </script>
+</html>

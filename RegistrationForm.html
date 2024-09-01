@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Registration Form">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+        <style type="text/css">
+            header{
+                text-align: center;
+                height: 180px;
+                padding: 10px;
+            }
+            header aside{
+                float: left;
+            }
+            section{
+                margin-top: 10px;
+                font-family: 'Inconsolata', monospace;
+                font-size: 20px;
+            }
+            section input{
+                font-size: 15px;
+            }
+            section select{
+                font-size: 15px;
+                width: 200px;
+            }
+            footer{
+                text-align: center;
+            }
+        </style>
+        <script>
+            function checkgenderMale(){
+                if(document.getElementById("gender_male").checked){        
+                    document.getElementById("gender_female").checked=false;
+                    document.getElementById("gender_others").checked=false;
+                    }
+            }
+            function checkgenderFemale(){    
+                if(document.getElementById("gender_female").checked){        
+                    document.getElementById("gender_male").checked=false;
+                    document.getElementById("gender_others").checked=false;
+                    }
+            }
+            function checkgenderOthers(){
+                if(document.getElementById("gender_others").checked){        
+                    document.getElementById("gender_female").checked=false;
+                    document.getElementById("gender_male").checked=false;
+                    }
+            }
+            function date(){
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = dt.toLocaleString();
+            var t = setTimeout(date,500); 
+            }
+        </script>
+    </head>
+    
+    <body onload="date()" style="background-color: azure">
+        <header>
+            <div style="float: right;">
+                <p style="font-size: 15px;"><span id="datetime"></span></p>
+            </div>
+            <aside>
+                <img src="2page.JPG" alt="govt Logo" height="180px">
+            </aside>
+        </header>
+        <section>
+            <form action="Payment.html">
+                <fieldset>
+                    <legend>Service Required</legend>
+                    <label>Applying for:</label>
+                    <select>
+                        <option>--Select--</option>
+                        <option>Learning Licence</option>
+                        <option>Permanent Driving Licence</option>
+                        <option>Renewal Driving Licence</option>
+                    </select>
+                    <label style="margin-left: 200px;">Select class of vehicles:</label>
+                    <select >
+                        <option>Select Vehicles</option>
+				        <option>2 Wheeler without Gear</option>
+				    	<option>2 Wheeler with Gear</option>
+            			<option>4 Wheeler (LMV - Non Transport)</option>
+				        <option>2 Wheeler without Gear + 4 Wheeler</option>
+				    	<option>2 Wheeler with Gear + 4 Wheeler</option>
+                    </select>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Applicant Information's</legend>
+                    <label for="applicant_name">Name: </label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input id="applicant_name" type="text" placeholder="First name">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" placeholder="Middle name">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" placeholder="Last name">
+                    <br><br>
+                    <label for="applicant_Relation">Relation With Applicant:&nbsp;</label>
+                    <select  id="applicant_Relation">
+                        <option>Select</option>
+                        <option>Father</option>
+                        <option>Mother</option>
+                        <option>Husband</option>
+                        <option>Guardian</option>
+                    </select>
+                    <br><br>
+                    <label for="guardian_name">Guardian Name: </label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input id="guardian_name" type="text" placeholder="First name" >
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" placeholder="Middle name">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" placeholder="Last name" >
+                    <br><br>
+                    <label for="applicant_dob">DOB:</label>
+                    <input id="applicant_dob" type="date" >
+                    <br><br>
+                    <label>Gender:</label>
+                    <input id="gender_male" type="radio" onclick="checkgenderMale()">
+                    <label>Male</label>
+                    &nbsp;
+                    <input id="gender_female" type="radio" onclick="checkgenderFemale()">
+                    <label>Female</label>
+                    &nbsp;
+                    <input id="gender_others" type="radio" onclick="checkgenderOthers()">
+                    <label>Other's</label>
+                    <br><br>
+                    <label for="applicant_phno">Phone No.:</label>
+                    <input id="applicant_phno" type="tel" >
+                    <br><br>
+                    <label for="applicant_email">E-mail:</label>
+                    <input id="applicant_email" type="email" >
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Applicant Address Detail's</legend>
+                    <label>House No.:</label>
+                    <label style="margin-left: 210px;">Landmark:</label>
+                    <label style="margin-left: 250px;">District:</label>
+                    <br>
+                    <input type="text" placeholder="House No." >
+                    <input style="margin-left: 110px;" type="text" placeholder="Landmark" >
+                    <input style="margin-left: 140px;" type="text" placeholder="District">
+                    <br><br>
+                    <label>Tahsil/Police Station:</label>
+                    <label style="margin-left: 90px;">Village:</label>
+                    <label style="margin-left: 260px;">State:</label>
+                    <br>
+                    <input type="text" placeholder="Tahsil" >
+                    <input style="margin-left: 110px;" type="text" placeholder="Village:">
+                    <input style="margin-left: 140px;" type="text" placeholder="State">
+                    <br><br>
+                    <label>Pincode: </label>
+                    <input type="number" placeholder="Pincode">
+                </fieldset>
+                <br>
+                <center><a href="file:///C:/Users/mtyag/PycharmProjects/pythonProject1/college%20project/SlotBooking.html">VALIDATE AND BOOK YOUR SLOT</a></center>
+            </form>
+        </section>
+        <footer>
+            <p><strong>For More Information :<a href="https://parivahan.gov.in/parivahan/">Visit Parivahan Site</a></strong></p>
+        </footer>
+    </body>
+    
+</html>
